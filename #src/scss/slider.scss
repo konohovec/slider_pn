@@ -387,16 +387,7 @@
                 border-radius: 50%;
                 border: 2px solid #F41D37; 
             }
-            &::after {
-                content: '';
-                position: absolute;
-                top: -8px;
-                left: -8px;
-                width: 116px;
-                height: 116px;
-                border-radius: 50%;
-                border: 10px solid white; 
-            }
+            
             img {
                 width: 100%;
                 height: 100%;
@@ -444,6 +435,9 @@
         padding: 0 16px;
         height: 100%;
         min-height: 361px;
+        @media (min-width:1000px) and (max-width: 1200px) {
+            height: auto;
+        }
     }
 }
 .swiper-prev, .swiper-prev_main {
@@ -455,6 +449,16 @@
     height: 40px;
     transform: translate(0, 50%);
     left: -56px;
+}
+.swiper-prev {
+    @media (min-width:1000px) and (max-width: 1200px) {
+        left: 0;
+    }
+}
+.swiper-next {
+    @media (min-width:1000px) and (max-width: 1200px) {
+        right: 0;
+    }
 }
 .swiper-next, .swiper-next_main {
     position: absolute;
@@ -502,7 +506,7 @@
         top: 40%;
     }
     @media (max-width: $md4+px) {
-        top: 35%;
+        top: 28%;
         right: -10px;
     }
 }
@@ -516,7 +520,7 @@
         top: 40%;
     }
     @media (max-width: $md4+px) {
-        top: 35%;
+        top: 28%;
         left: -10px;
     }
 }
@@ -553,6 +557,7 @@
 .trosheva {
     background: url('../img/spickers_photo/trosheva.jpg') 0 0 / cover no-repeat;
     border-radius: 50%;
+    background-position: 50% 50%;
 }
 .petrov {
     background: url('../img/spickers_photo/petrov.jpg') 0 0 / cover no-repeat;
@@ -565,4 +570,10 @@
 .makarov {
     background: url('../img/spickers_photo/makarov.jpg') 0 0 / cover no-repeat;
     border-radius: 50%;
+}
+
+.swiper-container.mySwiper {
+    @media (min-width:1000px) and (max-width: 1200px) {
+        width: 90%;
+    }
 }
