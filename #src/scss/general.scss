@@ -1,0 +1,72 @@
+//====================================
+//BREAKPOINTS
+
+$minWidth: 320px;
+$maxWidth: 1152px;
+$maxWidthContainer: 1120;
+$md1: $maxWidthContainer;
+$md2: 960;
+$md3: 640;
+$md4: 480;
+
+
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 20px;
+	}
+}
+
+
+//=========================================//
+//===========BURGER================//
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all .5s ease 0s;
+			top: calc(50% - 1px);
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-135deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(135deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
